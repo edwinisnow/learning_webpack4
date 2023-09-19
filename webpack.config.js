@@ -1,20 +1,14 @@
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 const path = require('path')
 const WebpackDevServer = require('webpack-dev-server');
 
 module.exports = {
-    entry: {
-        about: './src/About.js',
-        contact: './src/Contact.js',
-    },
+    entry: './src/index.js',
     output: {
         filename: '[name].bundle.js',
         path: path.resolve(__dirname, 'dist')
     },
-    optimization: {
-        splitChunks: {
-            chunks: 'all'
-        }
-    },
+    plugins: [new HtmlWebpackPlugin()],
     devServer: {
         static: './dist'
     },
