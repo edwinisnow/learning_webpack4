@@ -1,12 +1,10 @@
 import React from 'react'
 import { render } from 'react-dom'
-import './style.css'
 
-const Greet = () => {
+const About = () => {
     return (
         <div>
-            <h1>Hello from React - Dev</h1>
-            <div id="image"></div>
+            <h1>About</h1>
         </div>
     )
 }
@@ -14,6 +12,6 @@ const Greet = () => {
 
 
 render(
-    <Greet />,
+    <About />,
     document.getElementById('target')
 )

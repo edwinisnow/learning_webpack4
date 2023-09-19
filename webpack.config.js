@@ -1,10 +1,22 @@
 const path = require('path')
+const WebpackDevServer = require('webpack-dev-server');
 
 module.exports = {
-    entry: './src/index.js',
+    entry: {
+        about: './src/About.js',
+        contact: './src/Contact.js',
+    },
     output: {
-        filename: 'main.js',
+        filename: '[name].bundle.js',
         path: path.resolve(__dirname, 'dist')
+    },
+    optimization: {
+        splitChunks: {
+            chunks: 'all'
+        }
+    },
+    devServer: {
+        static: './dist'
     },
     module: {
         rules: [
